@@ -22,18 +22,20 @@
 
         /* BACK BAR */
         .back-bar {
-            background:var(--g950); padding:.7rem 2rem;
+            background:var(--g950); padding:0 2rem;
             display:flex; align-items:center; justify-content:center; gap:1rem;
             position:fixed; top:0; left:0; right:0; z-index:102; height:37px;
+            white-space:nowrap; overflow:hidden;
         }
-        .back-bar span { color:rgba(255,255,255,.4); font-size:.8rem; }
+        .back-bar span { color:rgba(255,255,255,.4); font-size:.78rem; }
         .back-bar a {
-            color:#86efac; font-size:.85rem; font-weight:800; text-decoration:none;
-            display:inline-flex; align-items:center; gap:6px;
-            border:1.5px solid rgba(134,239,172,.35); padding:.35rem 1rem; border-radius:100px;
-            transition:all .2s;
+            color:#86efac; font-size:.8rem; font-weight:800; text-decoration:none;
+            display:inline-flex; align-items:center; gap:5px;
+            border:1.5px solid rgba(134,239,172,.35); padding:.25rem .875rem; border-radius:100px;
+            transition:all .2s; flex-shrink:0;
         }
         .back-bar a:hover { background:rgba(134,239,172,.12); border-color:#86efac; }
+        @media(max-width:480px) { .back-bar span { display:none; } }
 
         nav { position:fixed; top:37px; left:0; right:0; z-index:100; padding:0 2rem; height:64px; display:flex; align-items:center; justify-content:space-between; transition:background .4s var(--ease), box-shadow .4s; }
         nav.scrolled { background:rgba(255,255,255,.97); backdrop-filter:blur(20px); box-shadow:0 1px 0 rgba(0,0,0,.07); top:0; }
