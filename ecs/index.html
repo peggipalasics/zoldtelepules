@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Minden klíma után egy fát ültetünk Écsre. SilverKlíma – Silver Concept Kft.">
-    <title>SilverKlíma × Écs – Fát ültetünk a faludba</title>
+    <meta name="description" content="Minden új écsi klíma telepítés után egy fát ültetünk Écsre. SilverKlíma – Silver Concept Kft.">
+    <title>SilverKlíma × Écs – Fát ültetünk Écsre</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script async src="https://r3.minicrm.hu/api/minicrm.js?t=1777282066"></script>
     <link rel="stylesheet" href="https://r3.minicrm.hu/api/minicrm.css" />
@@ -18,11 +18,25 @@
         }
         html { scroll-behavior:smooth; }
         body { font-family:'Inter',sans-serif; color:#1a1a1a; background:#fff; line-height:1.6; overflow-x:hidden; }
-
         #progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--g500),#86efac); z-index:200; width:0%; transition:width .1s; }
 
-        nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 2rem; height:64px; display:flex; align-items:center; justify-content:space-between; transition:background .4s var(--ease), box-shadow .4s; }
-        nav.scrolled { background:rgba(255,255,255,.97); backdrop-filter:blur(20px); box-shadow:0 1px 0 rgba(0,0,0,.07); }
+        /* BACK BAR */
+        .back-bar {
+            background:var(--g950); padding:.7rem 2rem;
+            display:flex; align-items:center; justify-content:center; gap:1rem;
+            position:fixed; top:0; left:0; right:0; z-index:102; height:37px;
+        }
+        .back-bar span { color:rgba(255,255,255,.4); font-size:.8rem; }
+        .back-bar a {
+            color:#86efac; font-size:.85rem; font-weight:800; text-decoration:none;
+            display:inline-flex; align-items:center; gap:6px;
+            border:1.5px solid rgba(134,239,172,.35); padding:.35rem 1rem; border-radius:100px;
+            transition:all .2s;
+        }
+        .back-bar a:hover { background:rgba(134,239,172,.12); border-color:#86efac; }
+
+        nav { position:fixed; top:37px; left:0; right:0; z-index:100; padding:0 2rem; height:64px; display:flex; align-items:center; justify-content:space-between; transition:background .4s var(--ease), box-shadow .4s; }
+        nav.scrolled { background:rgba(255,255,255,.97); backdrop-filter:blur(20px); box-shadow:0 1px 0 rgba(0,0,0,.07); top:0; }
         .nav-logo { display:flex; align-items:center; text-decoration:none; }
         .nav-logo-img { height:36px; width:auto; max-width:150px; display:block; object-fit:contain; filter:brightness(0) invert(1); transition:filter .4s; }
         nav.scrolled .nav-logo-img { filter:none; }
@@ -47,7 +61,7 @@
         .mobile-menu a:hover { color:#86efac; }
         .mobile-cta { background:linear-gradient(135deg,var(--g500),var(--g700)) !important; padding:.85rem 2.5rem; border-radius:12px; font-size:1rem !important; }
 
-        .hero { min-height:100vh; background:linear-gradient(155deg,var(--g950) 0%,var(--g900) 35%,var(--g800) 65%,var(--g700) 100%); display:flex; align-items:center; justify-content:center; text-align:center; padding:7rem 1.5rem 6rem; position:relative; overflow:hidden; }
+        .hero { min-height:100vh; background:linear-gradient(155deg,var(--g950) 0%,var(--g900) 35%,var(--g800) 65%,var(--g700) 100%); display:flex; align-items:center; justify-content:center; text-align:center; padding:8.5rem 1.5rem 6rem; position:relative; overflow:hidden; }
         .hero-orb { position:absolute; border-radius:50%; filter:blur(80px); animation:orb-drift 8s ease-in-out infinite alternate; }
         .hero-orb-1 { width:500px; height:500px; background:rgba(34,197,94,.12); top:-100px; left:-100px; }
         .hero-orb-2 { width:400px; height:400px; background:rgba(134,239,172,.08); bottom:-50px; right:-80px; animation-delay:-4s; }
@@ -59,12 +73,13 @@
         .hero-badge,.hero h1,.hero-sub,.hero-btns { opacity:0; transform:translateY(24px); animation:hero-in .8s var(--ease) forwards; }
         .hero-badge{animation-delay:.1s} .hero h1{animation-delay:.25s} .hero-sub{animation-delay:.4s} .hero-btns{animation-delay:.55s}
         @keyframes hero-in { to{opacity:1;transform:translateY(0)} }
-        .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.2); color:rgba(255,255,255,.92); padding:7px 20px; border-radius:100px; font-size:.78rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; margin-bottom:1.75rem; }
+        .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.2); color:rgba(255,255,255,.92); padding:7px 20px; border-radius:100px; font-size:.82rem; font-weight:600; letter-spacing:.03em; margin-bottom:1.75rem; }
+        .hero-badge .highlight { color:#86efac; font-weight:900; }
         .pulse { width:7px; height:7px; background:#86efac; border-radius:50%; animation:pulse 2s infinite; flex-shrink:0; }
         @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(1.8)} }
         .hero h1 { font-size:clamp(2.2rem,5.5vw,4.2rem); font-weight:900; color:white; line-height:1.12; letter-spacing:-.025em; margin-bottom:1.25rem; }
         .hero h1 em { color:#86efac; font-style:normal; }
-        .hero-sub { color:rgba(255,255,255,.72); font-size:1.05rem; max-width:560px; margin:0 auto 2.75rem; line-height:1.72; }
+        .hero-sub { color:rgba(255,255,255,.75); font-size:1.1rem; max-width:580px; margin:0 auto 2.75rem; line-height:1.72; }
         .hero-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
         .btn-white { background:white; color:var(--g800); padding:.9rem 2.2rem; border-radius:12px; font-size:1rem; font-weight:800; text-decoration:none; transition:all .25s var(--ease); box-shadow:0 4px 24px rgba(0,0,0,.28); }
         .btn-white:hover { transform:translateY(-3px); box-shadow:0 12px 36px rgba(0,0,0,.32); }
@@ -73,7 +88,6 @@
 
         .wave { display:block; width:100%; overflow:hidden; line-height:0; }
         .wave svg { display:block; width:100%; }
-
         .section { padding:5.5rem 1.5rem; }
         .section-inner { max-width:1100px; margin:0 auto; }
         .tag { font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:var(--g600); margin-bottom:.75rem; display:block; }
@@ -96,7 +110,7 @@
         .stat-card:hover { transform:translateY(-6px); }
         .stat-icon { width:60px; height:60px; background:linear-gradient(135deg,var(--g100),var(--g200)); border-radius:16px; display:flex; align-items:center; justify-content:center; color:var(--g700); margin:0 auto 1.5rem; }
         .stat-icon svg { width:26px; height:26px; }
-        .stat-num { font-size:3.2rem; font-weight:900; color:var(--g900); line-height:1; display:block; margin-bottom:.5rem; letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+        .stat-num { font-size:3.2rem; font-weight:900; color:var(--g900); line-height:1; display:block; margin-bottom:.5rem; letter-spacing:-.03em; }
         .stat-lbl { color:#6b7280; font-size:.93rem; }
 
         .booking-section { background:linear-gradient(135deg,var(--g50),var(--g100)); }
@@ -104,7 +118,7 @@
         .booking-card::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 80% 20%, rgba(34,197,94,.15) 0%, transparent 70%); }
         .booking-card > * { position:relative; z-index:1; }
         .booking-icon { width:72px; height:72px; margin:0 auto 1.5rem; background:rgba(255,255,255,.1); border-radius:20px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.15); }
-        .booking-card h3 { font-size:clamp(1.5rem,3vw,2rem); font-weight:900; color:white; margin-bottom:.875rem; letter-spacing:-.02em; }
+        .booking-card h3 { font-size:clamp(1.5rem,3vw,2rem); font-weight:900; color:white; margin-bottom:.875rem; }
         .booking-card p { color:rgba(255,255,255,.68); font-size:1rem; line-height:1.7; max-width:480px; margin:0 auto 2rem; }
         .booking-features { display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:2.25rem; }
         .booking-feat { display:flex; align-items:center; gap:7px; color:rgba(255,255,255,.75); font-size:.85rem; font-weight:500; }
@@ -123,7 +137,6 @@
         .ci-lbl { font-size:.72rem; color:#9ca3af; text-transform:uppercase; letter-spacing:.07em; margin-bottom:2px; }
         .ci-val { font-weight:700; color:#111; font-size:.97rem; }
         .contact-form { background:white; border-radius:24px; padding:2.5rem; box-shadow:0 4px 32px rgba(0,0,0,.07); border:1px solid rgba(0,0,0,.04); }
-
         .contact-form form.TurnKeyCRM,.contact-form form.TurnKeyCRM * { box-sizing:border-box !important; }
         .contact-form form.TurnKeyCRM { font-family:'Inter',sans-serif !important; width:100% !important; max-width:100% !important; text-align:left !important; }
         .contact-form form.TurnKeyCRM fieldset { background:transparent !important; border:none !important; padding:0 !important; margin:0 0 .5rem !important; float:none !important; width:100% !important; min-width:0 !important; }
@@ -144,10 +157,6 @@
         .contact-form form.TurnKeyCRM .Response { background:var(--g50) !important; border-radius:12px !important; padding:1rem !important; color:var(--g800) !important; font-weight:600 !important; border:1.5px solid var(--g200) !important; margin-top:1rem !important; }
         .contact-form form.TurnKeyCRM .webform-footer { display:none !important; }
 
-        .back-bar { background:var(--g950); padding:.75rem 2rem; text-align:center; }
-        .back-bar a { color:rgba(255,255,255,.6); text-decoration:none; font-size:.85rem; transition:color .2s; }
-        .back-bar a:hover { color:white; }
-
         footer { background:var(--g950); color:rgba(255,255,255,.45); text-align:center; padding:2rem 1.5rem; font-size:.85rem; border-top:1px solid rgba(255,255,255,.06); }
         footer strong { color:rgba(255,255,255,.8); }
         footer a { color:rgba(255,255,255,.45); text-decoration:none; transition:color .2s; }
@@ -164,21 +173,21 @@
         @media(max-width:640px) {
             .nav-links,.nav-cta{display:none} .hamburger{display:flex} .mobile-menu{display:flex}
             .steps,.stats-grid{grid-template-columns:1fr} .section{padding:4rem 1.25rem}
-            .hero{padding:6rem 1.25rem 5rem} .booking-card{padding:2rem 1.25rem} .contact-form{padding:1.75rem 1.25rem}
+            .hero{padding:7rem 1.25rem 5rem} .booking-card{padding:2rem 1.25rem} .contact-form{padding:1.75rem 1.25rem}
         }
     </style>
 </head>
 <body>
 
 <div id="progress"></div>
-<div style="background:var(--g950);padding:.6rem 2rem;display:flex;align-items:center;justify-content:center;gap:.75rem;position:relative;z-index:101">
-    <span style="color:rgba(255,255,255,.45);font-size:.82rem">A Silver Klíma program főoldala:</span>
-    <a href="/" style="color:#86efac;font-size:.82rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:5px">
+
+<div class="back-bar">
+    <span>Silver Klíma program főoldala:</span>
+    <a href="/">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
         zoldtelepules.hu
     </a>
 </div>
-
 
 <div class="mobile-menu" id="mobileMenu">
     <a href="#hogyan" onclick="closeMobile()">Hogyan működik</a>
@@ -207,9 +216,12 @@
     <div class="hero-orb hero-orb-2"></div>
     <div class="particles" id="particles"></div>
     <div class="hero-content">
-        <div class="hero-badge"><span class="pulse"></span> Écs csatlakozott a Silver Klíma 1 klíma = 1 fa programjához!</div>
+        <div class="hero-badge">
+            <span class="pulse"></span>
+            Écs csatlakozott a Silver Klíma&nbsp;<span class="highlight">1 klíma = 1 fa</span>&nbsp;programjához!
+        </div>
         <h1>Écs zöldebb lesz –<br>veled <em>együtt.</em></h1>
-        <p class="hero-sub">Minden új écsi Silver Klíma telepítés után egy fát ültetünk Écsen idén ősszel. Az otthonod energiahatékony hűtés-fűtésével a településed is zöldebbé válik.</p>
+        <p class="hero-sub">Minden új écsi Silver Klíma telepítés után egy fát ültetünk a településen idén ősszel. Az otthonod energiahatékony hűtés-fűtésével a közösséged is zöldebbé válik.</p>
         <div class="hero-btns">
             <a href="#foglalas" class="btn-white">Ingyenes felmérést foglalok!</a>
             <a href="#hogyan" class="btn-ghost">Hogyan működik?</a>
@@ -244,7 +256,7 @@
                 <div class="step-num">03</div>
                 <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M17 8C8 10 5.9 16.17 3.82 19.77"/><path d="M8 10c2-4 7-5 11-2"/><path d="M6 20c-2-7 3-12 8-13"/></svg></div>
                 <h3>Fa kerül Écsre</h3>
-                <p>Minden eladott klíma után egy fát ültetünk Écsre. Te energiahatékonyan hűtesz és fűtesz, a környezeted pedig virul.</p>
+                <p>Minden écsi Silver Klíma telepítés után egy fát ültetünk Écsre idén ősszel. Te energiahatékonyan hűtesz és fűtesz, a környezeted pedig virul.</p>
             </div>
         </div>
     </div>
@@ -259,7 +271,7 @@
         <div class="fade-up">
             <span class="tag">Écs × SilverKlíma</span>
             <h2 class="title">Écs már csatlakozott –<br>Te lehetsz az első vásárlók és faültetők egyike!</h2>
-            <p class="sub" style="margin:0 auto">Az écsi önkormányzat csatlakozott a programhoz. Minden helyi Silver Klíma telepítésnél nő az Écsen ültetett fák száma!</p>
+            <p class="sub" style="margin:0 auto">Az écsi önkormányzat csatlakozott a programhoz. Minden helyi Silver Klíma telepítésnél nő az Écsre ültetett fák száma!</p>
         </div>
         <div class="stats-grid">
             <div class="stat-card fade-up" style="transition-delay:.1s">
@@ -282,7 +294,7 @@
 </section>
 
 <div class="wave" style="background:var(--g50);margin-bottom:-2px">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60"><path d="M0,0 C720,60 720,0 1440,50 L1440,60 L0,60 Z" fill="linear-gradient(135deg,#f0fdf4,#dcfce7)"/></svg>
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60"><path d="M0,0 C720,60 720,0 1440,50 L1440,60 L0,60 Z" fill="#f0fdf4"/></svg>
 </div>
 
 <section class="section booking-section" id="foglalas">
@@ -316,24 +328,12 @@
             <div class="fade-left">
                 <span class="tag">Kapcsolat</span>
                 <h2 class="title">Egyéb kérdésed van?<br>Keress minket bizalommal!</h2>
-                <p class="sub">Töltsd ki az űrlapot, és 24 órán belül visszahívunk. Minden vásárlásoddal egy fát ültetünk Écsre.</p>
+                <p class="sub">Töltsd ki az űrlapot, és 24 órán belül visszahívunk. Minden Silver Klíma telepítéssel egy fát ültetünk Écsre.</p>
                 <div class="contact-info">
-                    <div class="ci">
-                        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-                        <div><div class="ci-lbl">Telefon</div><div class="ci-val">+36 70 907 6606</div></div>
-                    </div>
-                    <div class="ci">
-                        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-                        <div><div class="ci-lbl">E-mail</div><div class="ci-val">info@silverklima.hu</div></div>
-                    </div>
-                    <div class="ci">
-                        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                        <div><div class="ci-lbl">Telephely</div><div class="ci-val">9027 Győr, Bútorgyári u. 1/b.</div></div>
-                    </div>
-                    <div class="ci" style="background:var(--g50);border-color:var(--g200)">
-                        <div class="ci-icon" style="background:var(--g100)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-                        <div><div class="ci-lbl">Főoldal</div><div class="ci-val"><a href="/" style="color:var(--g700);font-weight:700;text-decoration:none">← zoldtelepules.hu</a></div></div>
-                    </div>
+                    <div class="ci"><div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="ci-lbl">Telefon</div><div class="ci-val">+36 70 907 6606</div></div></div>
+                    <div class="ci"><div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ci-lbl">E-mail</div><div class="ci-val">info@silverklima.hu</div></div></div>
+                    <div class="ci"><div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="ci-lbl">Telephely</div><div class="ci-val">9027 Győr, Bútorgyári u. 1/b.</div></div></div>
+                    <div class="ci" style="background:var(--g50);border-color:var(--g200)"><div class="ci-icon" style="background:var(--g100)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><div class="ci-lbl">Főoldal</div><div class="ci-val"><a href="/" style="color:var(--g700);font-weight:700;text-decoration:none">← zoldtelepules.hu</a></div></div></div>
                 </div>
             </div>
             <div class="contact-form fade-right" style="transition-delay:.15s">
@@ -345,12 +345,7 @@
                         <div class="InputBlock"><label class="Required">E-mail</label><input data-field="Email" data-table="Contact" data-type="Person" name="Contact[2302][Email]" language="HU" value="" type="text" /></div>
                         <div class="InputBlock"><label class="Required">Telefonszám</label><input data-field="Phone" data-table="Contact" data-type="Person" name="Contact[2302][Phone]" language="HU" value="" type="text" /></div>
                         <div class="InputBlock"><label>Üzenet</label><textarea data-field="PluszInfo" data-table="Project" data-type="" name="Project[2300][PluszInfo]" language="HU"></textarea></div>
-                        <div class="InputBlock">
-                            <label class="Required">Adatkezelési hozzájárulás</label>
-                            <div data-field="GDPR_Contribution" data-table="Dummy" data-type="" language="HU" value="">
-                                <label class="SetLabel"><input type="checkbox" value="1" name="Dummy[][GDPR_Contribution][]" /><span class="OverflowEllipsis CheckBoxLabel">Hozzájárulok, hogy a Silver Concept Kft. <a href="https://www.minicrm.hu/gdpr/" target="_blank" rel="noopener">CRM rendszerében</a> kezelje az adataimat.</span></label>
-                            </div>
-                        </div>
+                        <div class="InputBlock"><label class="Required">Adatkezelési hozzájárulás</label><div data-field="GDPR_Contribution" data-table="Dummy" data-type="" language="HU" value=""><label class="SetLabel"><input type="checkbox" value="1" name="Dummy[][GDPR_Contribution][]" /><span class="OverflowEllipsis CheckBoxLabel">Hozzájárulok, hogy a Silver Concept Kft. <a href="https://www.minicrm.hu/gdpr/" target="_blank" rel="noopener">CRM rendszerében</a> kezelje az adataimat.</span></label></div></div>
                     </fieldset>
                     <div style="display:none;" class="Response"></div>
                     <input type="Submit" value="Üzenetet küldök →" />
