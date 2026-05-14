@@ -160,12 +160,12 @@
             opacity:0; transform:translateY(24px);
             animation:hero-in .8s var(--ease) forwards;
         }
+        .hero-anim-card { animation-delay:0s; }
         .hero-badge { animation-delay:.1s; }
         .hero h1    { animation-delay:.25s; }
         .hero-sub   { animation-delay:.4s; }
-        .hero-anim-card { animation-delay:.55s; }
-        .countdown  { animation-delay:.7s; }
-        .hero-btns  { animation-delay:.85s; }
+        .countdown  { animation-delay:.55s; }
+        .hero-btns  { animation-delay:.7s; }
         @keyframes hero-in {
             to { opacity:1; transform:translateY(0); }
         }
@@ -595,7 +595,7 @@
 <div class="mobile-menu" id="mobileMenu">
     <a href="#program" onclick="closeMobile()">A program</a>
     <a href="#hogyan" onclick="closeMobile()">Hogyan működik</a>
-    <a href="#hatas" onclick="closeMobile()">Hatás</a>
+    <a href="#hatas" onclick="closeMobile()">Hol tartunk</a>
     <a href="#foglalas" onclick="closeMobile()">Időpontfoglalás</a>
     <a href="#kapcsolat" onclick="closeMobile()">Kapcsolat</a>
     <a href="#foglalas" class="mobile-cta" onclick="closeMobile()">Ingyenes felmérést foglalok!</a>
@@ -609,7 +609,7 @@
     <ul class="nav-links">
         <li><a href="#program">A program</a></li>
         <li><a href="#hogyan">Hogyan működik</a></li>
-        <li><a href="#hatas">Hatás</a></li>
+        <li><a href="#hatas">Hol tartunk</a></li>
         <li><a href="#foglalas">Időpontfoglalás</a></li>
         <li><a href="#kapcsolat">Kapcsolat</a></li>
     </ul>
@@ -627,10 +627,6 @@
     <div class="particles" id="particles"></div>
 
     <div class="hero-content">
-        <div class="hero-badge"><span class="pulse"></span> Korlátozott időre szóló program</div>
-        <h1>Minden klíma után egy fát ültetünk <em>a településednek.</em></h1>
-        <p class="hero-sub">Szereltess fel klímát a Silver Klímával, és minden eladott klíma után egy fát ültetünk arra a településre, ahol élsz – <em>azokon a településeken, ahol az önkormányzat csatlakozott a programunkhoz.</em></p>
-
         <div class="hero-anim-card">
             <div data-silver-anim
                  data-logo-src="assets/silver-logo.png"
@@ -638,6 +634,9 @@
                  data-variant="zoldTelepules"
                  data-green-color="#22c55e"></div>
         </div>
+        <div class="hero-badge"><span class="pulse"></span> Korlátozott időre szóló program</div>
+        <h1>Minden klíma után egy fát ültetünk <em>a településednek.</em></h1>
+        <p class="hero-sub">Szereltess fel klímát a Silver Klímával, és minden eladott klíma után egy fát ültetünk arra a településre, ahol élsz – <em>azokon a településeken, ahol az önkormányzat csatlakozott a programunkhoz.</em></p>
 
         <div class="countdown">
             <div class="cd-item"><span class="cd-num" id="days">--</span><span class="cd-lbl">nap</span></div>
