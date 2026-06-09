@@ -279,6 +279,9 @@
 
         /* ── STATS ── */
         .stats-section { background:var(--g50); }
+
+        .team-photo { max-width:900px; margin:0 auto; border-radius:24px; overflow:hidden; box-shadow:0 20px 60px rgba(5,46,22,.18); border:1px solid rgba(0,0,0,.05); line-height:0; }
+        .team-photo img { width:100%; height:auto; display:block; }
         .stats-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
         .stat-card {
             background:white; border-radius:22px; padding:2.75rem 2rem; text-align:center;
@@ -732,7 +735,7 @@
         <div class="fade-up">
             <span class="tag">Eddigi eredményeink</span>
             <h2 class="title">Indulás előtt állunk –<br>te lehetsz az első!</h2>
-            <p class="sub" style="margin:0 auto">A program most indul – csatlakozz az elsők között, és minden vásárlással növeled a közös eredményt!</p>
+            <p class="sub" style="margin:0 auto">A program <strong>2026. június 9-én indul</strong> – csatlakozz az elsők között, és minden vásárlással növeled a közös eredményt!</p>
         </div>
         <div class="stats-grid">
             <div class="stat-card fade-up" style="transition-delay:.1s">
@@ -760,6 +763,20 @@
     </div>
 </section>
 
+<!-- TEAM -->
+<section class="section team-section" style="background:var(--g50)">
+    <div class="section-inner" style="text-align:center">
+        <div class="fade-up">
+            <span class="tag">A csapatunk</span>
+            <h2 class="title">Emberek, akik a program mögött állnak</h2>
+            <p class="sub" style="margin:0 auto 2.5rem">A Silver Klíma csapata gondoskodik a felmérésről, a szakszerű telepítésről és arról, hogy minden klíma után valóban fa kerüljön a településedre.</p>
+        </div>
+        <div class="team-photo fade-up" style="transition-delay:.1s">
+            <img src="assets/silver-csapat.jpg" alt="A Silver Klíma csapata" loading="lazy" onerror="this.closest('.team-section').style.display='none'">
+        </div>
+    </div>
+</section>
+
 <!-- WAVE: stats → cities -->
 <div class="wave" style="background:var(--g50); margin-bottom:-2px">
     <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60"><path d="M0,30 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="white"/></svg>
@@ -776,7 +793,6 @@
         <div class="cities-wrap" id="citiesWrap">
             <a href="/ecs" class="city-tag"><span class="city-dot"></span>Écs</a>
             <a href="/gyorzamoly" class="city-tag"><span class="city-dot"></span>Győrzámoly</a>
-            <a href="/gonyu" class="city-tag"><span class="city-dot"></span>Gönyű</a>
         </div>
 
         <div class="mayor-cta fade-up" style="transition-delay:.2s">
@@ -806,7 +822,7 @@
                 <li class="detail-item"><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Az akció minden új Silver Klíma vásárlásra érvényes</li>
                 <li class="detail-item"><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Nincs felső korlát – akárhány klímát rendelsz, annyi fát ültetünk</li>
                 <li class="detail-item"><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>A fa elültetéséről visszaigazolást küldünk e-mailben</li>
-                <li class="detail-item"><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Az akció időtartama: 2026. augusztus 31-ig</li>
+                <li class="detail-item"><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Az akció időtartama: 2026. június 9-től augusztus 31-ig</li>
             </ul>
             <a href="#kapcsolat" class="btn-green">Élj a lehetőséggel →</a>
         </div>
