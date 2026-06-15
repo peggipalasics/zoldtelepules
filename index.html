@@ -233,6 +233,14 @@
 
         /* ── HOW ── */
         .how-section { background:#f8faf9; }
+
+        .hero-poster { margin:1.85rem auto .25rem; max-width:330px; }
+        .hero-poster img { width:100%; height:auto; display:block; filter:drop-shadow(0 18px 44px rgba(0,0,0,.4)); }
+        .how-illustration { max-width:720px; margin:3rem auto 0; }
+        .how-illustration img { width:100%; height:auto; display:block; }
+        .footer-logo { display:inline-block; background:#fff; border-radius:18px; padding:14px 20px; margin-bottom:1.25rem; box-shadow:0 8px 28px rgba(0,0,0,.25); }
+        .footer-logo img { height:70px; width:auto; display:block; }
+        @media (max-width:560px){ .hero-poster{ max-width:260px } .footer-logo img{ height:56px } }
         .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; margin-top:3rem; }
         .step-card {
             background:white; border-radius:22px; padding:2.25rem 2rem;
@@ -641,6 +649,10 @@
         <h1>Minden klíma után egy fát ültetünk <em>a településednek.</em></h1>
         <p class="hero-sub">Szereltess fel klímát a Silver Klímával, és minden eladott klíma után egy fát ültetünk arra a településre, ahol élsz – <em>azokon a településeken, ahol az önkormányzat csatlakozott a programunkhoz.</em></p>
 
+        <div class="hero-poster fade-up">
+            <img src="assets/zold-program-poszter.png" alt="Zöld Település Program – 1 klíma = 1 fa · 2026. június 15. – augusztus 31. · minden résztvevő Győr környéki településen">
+        </div>
+
         <div class="countdown">
             <div class="cd-item"><span class="cd-num" id="days">--</span><span class="cd-lbl">nap</span></div>
             <div class="cd-item"><span class="cd-num" id="hours">--</span><span class="cd-lbl">óra</span></div>
@@ -700,6 +712,9 @@
                 <h3>Ültetünk egy fát</h3>
                 <p>Minden eladott klíma után egy fát ültetünk a te településeden. Te energiahatékonyan hűtesz és fűtesz, a környezeted pedig virul.</p>
             </div>
+        </div>
+        <div class="how-illustration fade-up">
+            <img src="assets/klima-1-fa.png" alt="Minden klíma után egy fát ültetünk a településedre" loading="lazy">
         </div>
     </div>
 </section>
@@ -966,6 +981,7 @@
 
 <!-- FOOTER -->
 <footer>
+    <span class="footer-logo"><img src="assets/zold-program-logo.png" alt="Zöld Település Program logó"></span>
     <p>© 2026 <strong>SilverKlíma</strong> · Minden jog fenntartva · <a href="mailto:info@silverklima.hu">info@silverklima.hu</a></p>
 </footer>
 
